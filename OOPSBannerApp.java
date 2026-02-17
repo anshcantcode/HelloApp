@@ -1,34 +1,28 @@
 /**
  * OOPSBannerApp
  *
- * UC3: Display "OOPS" banner using String.join() for better efficiency.
+ * UC4: Display "OOPS" banner using array and loop for better modularity.
  *
  * @author Vansh
- * @version 3.0
+ * @version 4.0
  */
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        System.out.println(String.join(" ",
-                "*****", "*****", "*****", "*****"));
+        String[] banner = {
+                String.join(" ", "*****", "*****", "*****", "*****"),
+                String.join(" ", "*   *", "*   *", "*   *", "*   *"),
+                String.join(" ", "*   *", "*   *", "*   *", "*   *"),
+                String.join(" ", "*   *", "*   *", "*   *", "*   *"),
+                String.join(" ", "*   *", "*   *", "*   *", "*   *"),
+                String.join(" ", "*   *", "*   *", "*   *", "*   *"),
+                String.join(" ", "*****", "*****", "*****", "*****")
+        };
 
-        System.out.println(String.join(" ",
-                "*   *", "*   *", "*   *", "*   *"));
-
-        System.out.println(String.join(" ",
-                "*   *", "*   *", "*   *", "*   *"));
-
-        System.out.println(String.join(" ",
-                "*   *", "*   *", "*   *", "*   *"));
-
-        System.out.println(String.join(" ",
-                "*   *", "*   *", "*   *", "*   *"));
-
-        System.out.println(String.join(" ",
-                "*   *", "*   *", "*   *", "*   *"));
-
-        System.out.println(String.join(" ",
-                "*****", "*****", "*****", "*****"));
+        // Loop to print banner
+        for (String line : banner) {
+            System.out.println(line);
+        }
     }
 }
