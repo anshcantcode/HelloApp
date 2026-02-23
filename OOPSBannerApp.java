@@ -1,11 +1,3 @@
-/**
- * OOPSBannerApp
- *
- * UC6: Display "OOPS" banner using static helper methods.
- *
- * @author Vansh
- * @version 6.0
- */
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
@@ -28,7 +20,7 @@ public class OOPSBannerApp {
         }
     }
 
-    // Helper method for letter O
+    // Letter O
     public static String[] buildO() {
         return new String[]{
                 "*****",
@@ -41,25 +33,25 @@ public class OOPSBannerApp {
         };
     }
 
-    // Helper method for letter P
+    // Letter P
     public static String[] buildP() {
         return new String[]{
                 "*****",
                 "*   *",
                 "*   *",
                 "*****",
-                "*",
-                "*",
-                "*"
+                "*    ",
+                "*    ",
+                "*    "
         };
     }
 
-    // Helper method for letter S
+    // Letter S
     public static String[] buildS() {
         return new String[]{
                 "*****",
-                "*",
-                "*",
+                "*    ",
+                "*    ",
                 "*****",
                 "    *",
                 "    *",
