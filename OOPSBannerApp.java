@@ -1,23 +1,15 @@
-/**
- * OOPSBannerApp
- *
- * UC5: Display "OOPS" banner using inline array initialization.
- *
- * @author Vansh
- * @version 5.0
- */
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
         String[] banner = {
                 String.join(" ", "*****", "*****", "*****", "*****"),
-                String.join(" ", "*   *", "*   *", "*   *", "*   *"),
-                String.join(" ", "*   *", "*   *", "*   *", "*   *"),
-                String.join(" ", "*   *", "*   *", "*   *", "*   *"),
-                String.join(" ", "*   *", "*   *", "*   *", "*   *"),
-                String.join(" ", "*   *", "*   *", "*   *", "*   *"),
-                String.join(" ", "*****", "*****", "*****", "*****")
+                String.join(" ", "*   *", "*   *", "*   *", "*    "),
+                String.join(" ", "*   *", "*   *", "*   *", "*    "),
+                String.join(" ", "*   *", "*   *", "*****", "*****"),
+                String.join(" ", "*   *", "*   *", "*    ", "    *"),
+                String.join(" ", "*   *", "*   *", "*    ", "    *"),
+                String.join(" ", "*****", "*****", "*    ", "*****")
         };
 
         for (String line : banner) {
