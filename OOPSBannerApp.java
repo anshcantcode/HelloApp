@@ -1,14 +1,27 @@
 /**
  * OOPSBannerApp
  *
- * UC1: Print literal text "OOPS" to the console.
+ * UC5: Display "OOPS" banner using inline array initialization.
  *
  * @author Vansh
- * @version 1.0
+ * @version 5.0
  */
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
-        System.out.println("OOPS");
+
+        String[] banner = {
+                String.join(" ", "*****", "*****", "*****", "*****"),
+                String.join(" ", "*   *", "*   *", "*   *", "*   *"),
+                String.join(" ", "*   *", "*   *", "*   *", "*   *"),
+                String.join(" ", "*   *", "*   *", "*   *", "*   *"),
+                String.join(" ", "*   *", "*   *", "*   *", "*   *"),
+                String.join(" ", "*   *", "*   *", "*   *", "*   *"),
+                String.join(" ", "*****", "*****", "*****", "*****")
+        };
+
+        for (String line : banner) {
+            System.out.println(line);
+        }
     }
 }
