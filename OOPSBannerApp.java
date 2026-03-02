@@ -1,79 +1,73 @@
-/**
- * OOPSBannerApp
- *
- * UC7: Display "OOPS" banner using CharacterPattern class
- * for centralized pattern management.
- *
- * @author Vansh
- * @version 7.0
- */
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * OOPSBannerApp
+ *
+ * UC8: Use HashMap to store character patterns and
+ * render banner using a dedicated function.
+ *
+ * @author Vansh
+ * @version 8.0
+ */
 public class OOPSBannerApp {
+
+    private static final Map<Character, String[]> patternMap = new HashMap<>();
 
     public static void main(String[] args) {
 
-        String word = "OOPS";
+        initializePatterns();
 
-        CharacterPatternMap patternMap = new CharacterPatternMap();
+        renderBanner("OOPS");
+    }
 
-        // Print banner row by row
+    // Initialize Map with character patterns
+    private static void initializePatterns() {
+
+        patternMap.put('O', new String[]{
+                "*****",
+                "*   *",
+                "*   *",
+                "*   *",
+                "*   *",
+                "*   *",
+                "*****"
+        });
+
+        patternMap.put('P', new String[]{
+                "*****",
+                "*   *",
+                "*   *",
+                "*****",
+                "*",
+                "*",
+                "*"
+        });
+
+        patternMap.put('S', new String[]{
+                "*****",
+                "*",
+                "*",
+                "*****",
+                "    *",
+                "    *",
+                "*****"
+        });
+    }
+
+    // Dedicated render function
+    private static void renderBanner(String word) {
+
         for (int row = 0; row < 7; row++) {
+
             StringBuilder line = new StringBuilder();
 
             for (char ch : word.toCharArray()) {
-                String[] pattern = patternMap.getPattern(ch);
+                String[] pattern = patternMap.get(ch);
                 line.append(pattern[row]).append(" ");
             }
 
             System.out.println(line);
-        }
-    }
-
-    /**
-     * Static Inner Class for managing character patterns
-     */
-    static class CharacterPatternMap {
-
-        private final Map<Character, String[]> patternMap;
-
-        public CharacterPatternMap() {
-            patternMap = new HashMap<>();
-
-            patternMap.put('O', new String[]{
-                    "*****",
-                    "*   *",
-                    "*   *",
-                    "*   *",
-                    "*   *",
-                    "*   *",
-                    "*****"
-            });
-
-            patternMap.put('P', new String[]{
-                    "*****",
-                    "*   *",
-                    "*   *",
-                    "*****",
-                    "*",
-                    "*",
-                    "*"
-            });
-
-            patternMap.put('S', new String[]{
-                    "*****",
-                    "*",
-                    "*",
-                    "*****",
-                    "    *",
-                    "    *",
-                    "*****"
-            });
-        }
-
-        public String[] getPattern(char ch) {
-            return patternMap.get(ch);
         }
     }
 }
