@@ -1,69 +1,79 @@
 /**
  * OOPSBannerApp
  *
- * UC6: Display "OOPS" banner using static helper methods.
+ * UC7: Display "OOPS" banner using CharacterPattern class
+ * for centralized pattern management.
  *
  * @author Vansh
- * @version 6.0
+ * @version 7.0
  */
+import java.util.HashMap;
+import java.util.Map;
+
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        String[][] letters = {
-                buildO(),
-                buildO(),
-                buildP(),
-                buildS()
-        };
+        String word = "OOPS";
 
-        // Combine letters row by row
+        CharacterPatternMap patternMap = new CharacterPatternMap();
+
+        // Print banner row by row
         for (int row = 0; row < 7; row++) {
-            String line = String.join(" ",
-                    letters[0][row],
-                    letters[1][row],
-                    letters[2][row],
-                    letters[3][row]);
+            StringBuilder line = new StringBuilder();
+
+            for (char ch : word.toCharArray()) {
+                String[] pattern = patternMap.getPattern(ch);
+                line.append(pattern[row]).append(" ");
+            }
+
             System.out.println(line);
         }
     }
 
-    // Helper method for letter O
-    public static String[] buildO() {
-        return new String[]{
-                "*****",
-                "*   *",
-                "*   *",
-                "*   *",
-                "*   *",
-                "*   *",
-                "*****"
-        };
-    }
+    /**
+     * Static Inner Class for managing character patterns
+     */
+    static class CharacterPatternMap {
 
-    // Helper method for letter P
-    public static String[] buildP() {
-        return new String[]{
-                "*****",
-                "*   *",
-                "*   *",
-                "*****",
-                "*",
-                "*",
-                "*"
-        };
-    }
+        private final Map<Character, String[]> patternMap;
 
-    // Helper method for letter S
-    public static String[] buildS() {
-        return new String[]{
-                "*****",
-                "*",
-                "*",
-                "*****",
-                "    *",
-                "    *",
-                "*****"
-        };
+        public CharacterPatternMap() {
+            patternMap = new HashMap<>();
+
+            patternMap.put('O', new String[]{
+                    "*****",
+                    "*   *",
+                    "*   *",
+                    "*   *",
+                    "*   *",
+                    "*   *",
+                    "*****"
+            });
+
+            patternMap.put('P', new String[]{
+                    "*****",
+                    "*   *",
+                    "*   *",
+                    "*****",
+                    "*",
+                    "*",
+                    "*"
+            });
+
+            patternMap.put('S', new String[]{
+                    "*****",
+                    "*",
+                    "*",
+                    "*****",
+                    "    *",
+                    "    *",
+                    "*****"
+            });
+        }
+
+        public String[] getPattern(char ch) {
+            return patternMap.get(ch);
+        }
     }
 }
